@@ -162,6 +162,9 @@ docstring-code-format = true
 
 [tool.ruff.lint.per-file-ignores]
 "test/**" = ["S101"]  # Allow asserts in tests
+# fk_discovery 的中文报告与注释使用全角标点/中文句号; CLI main 需要 print
+"fk_discovery.py" = ["RUF001", "RUF002", "RUF003", "D415", "T201"]
+"test/test_fk_discovery.py" = ["RUF001"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["datasketch"]
